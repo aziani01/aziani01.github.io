@@ -144,5 +144,22 @@ management: growth and yield of leek (Allium porrum L.) Hort. Sci. (Prague) 39: 
   ChatGPT m'ha proporcionat aquesta informació i també les fonts d'on a tret l'informació i al comprovarlo vaig poder veure que ha tornat a encertar. Les podeu veure a continuació
  </p>
  <img src="Captura6.png">
+<script>
+    // Mode clar/fosc amb canvi d'icona
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+
+    themeToggle.addEventListener('click', () => {
+      if (document.body.getAttribute('data-bs-theme') === 'dark') {
+        document.body.setAttribute('data-bs-theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      } else {
+        document.body.setAttribute('data-bs-theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+    });
+  </script>
 </body>
 </html>

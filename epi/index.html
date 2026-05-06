@@ -1064,6 +1064,12 @@ if (menuBtn && mobileMenu) {
     mobileMenu.classList.toggle("hidden");
   });
 }
+ 
+  document.addEventListener("click", (e) => {
+  if (!e.target.closest(".relative")) {
+    document.querySelectorAll('[id^="dd"]').forEach(d => d.classList.add('hidden'));
+  }
+});
   </script>
   
 </body>

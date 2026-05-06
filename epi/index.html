@@ -84,7 +84,7 @@
         </button>
         <div id="dd1" class="hidden absolute left-0 bg-slate-800 border border-slate-600 rounded-xl mt-2 p-2 min-w-[220px]">
           <a href="https://aziani01.github.io/cerca" class="block px-3 py-2 hover:bg-slate-700 rounded-lg">
-            Recerca Porro
+            Reçerca Porro
           </a>
         </div>
       </div>
@@ -102,7 +102,7 @@
             Calculem rumbs amb vectors
           </a>
           <a href="https://aziani01.github.io/distancies" class="block px-3 py-2 hover:bg-slate-700 rounded-lg">
-            Calculem distancies amb GPS
+            Calculem distàncies amb GPS
           </a>
         </div>
       </div>
@@ -127,7 +127,6 @@
           </a>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -1042,6 +1041,30 @@
       initModal();
       console.log('✅ Application ready – robust error handling & smart peak table added');
     };
+  
+  // Dropdowns desktop
+function toggleDropdown(id) {
+  const el = document.getElementById(id);
+
+  // cerrar otros dropdowns
+  document.querySelectorAll('[id^="dd"]').forEach(d => {
+    if (d.id !== id) d.classList.add('hidden');
+  });
+
+  // toggle actual
+  el.classList.toggle('hidden');
+}
+
+// Menú móvil
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+}
   </script>
+  
 </body>
 </html>

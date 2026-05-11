@@ -981,5 +981,35 @@ fetch("/navbar.html")
 </script>
   
   </script>
+
+<script>
+function toggleDropdown(id) {
+  const el = document.getElementById(id);
+
+  document.querySelectorAll('[id^="dd"]').forEach(d => {
+    if (d.id !== id) d.classList.add('hidden');
+  });
+
+  el.classList.toggle('hidden');
+}
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".relative")) {
+    document.querySelectorAll('[id^="dd"]').forEach(d => d.classList.add('hidden'));
+  }
+});
+
+setTimeout(() => {
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+}, 100);
+</script>
+
 </body>
 </html>

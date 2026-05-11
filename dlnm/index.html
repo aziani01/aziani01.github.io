@@ -969,6 +969,17 @@ els.demoDataset.addEventListener('change', async (e) => {
         els.runBtn.innerHTML = '<i class="fa-solid fa-play-circle me-2"></i>Compute DLNM';
       }
     });
+ 
+  <div id="navbar"></div>
+
+<script>
+fetch("/navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+</script>
+  
   </script>
 </body>
 </html>

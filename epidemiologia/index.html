@@ -336,8 +336,8 @@
         <h2>📝 Resum i conclusions del problema</h2>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
             <div>
-                <p>✔️ <strong>Associació significativa:</strong> \(r = 0.368\) (NO₂) i RR = 1.16.<br>
-                ✔️ <strong>Fracció atribuïble:</strong> 13.5% de la incidència en dies contaminants.<br>
+                <p>✔️ <strong>Associació significativa:</strong> \(r = 0.368\) (NO₂) i RR = 1.92.<br>
+                ✔️ <strong>Fracció atribuïble:</strong> 6.5% de la incidència en dies contaminants.<br>
                 ✔️ <strong>Efecte agut:</strong> màxima correlació a lag 0-1.<br>
                 ✔️ <strong>Pics d'alerta:</strong> gener 2022, amb incidències >5 per 1000.</p>
             </div>
@@ -348,82 +348,38 @@
         <hr style="margin: 24px 0 12px; border-top: 2px solid #bdd6ca;">
         <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
             <span style="background: #1b4e3f; color: white; padding: 6px 24px; border-radius: 60px;">📍 Dades reals processades · El Prat (Sagnier)</span>
-            <span class="badge">🌫️ NO₂ · PM · O₃ · SO₂ · 5108 dies</span>
+            <span class="badge">🌫️ NO₂ · PM · O₃ · SO₂ · 5191 dies</span>
             <span style="margin-left: auto; font-style: italic;">Anàlisi estil OMS · Educatiu</span>
         </div>
         <p class="footnote" style="margin-top: 18px;">
             * Els càlculs es basen en el conjunt de dades obtingudes de servidors de la Generalitat de Catalunya de El Prat (Sagnier) i municipis propers. Totes les fórmules s'han verificat amb les mitjanes i recomptes indicats.
         </p>
     </div>
-
+<div class="card">
+<h1>Model DLNM (Model No Lineal de Retard Distribuït)</h1>
+    <p>Aquest model matemàtic va ser creat per Gasparrini <i>et al.</i> (2010)</p>
+    <p>Els contaminants tenen un temps de retard respecte a la salut, es a dir, no hi ha un efecte inmediat sempre.
+        Moltes vegades poden tenir un efecte més tard.</p>
+    <p>Aquests models no son lineals perquè si fos lineal significaria que un augment de contaminació provoca un augment
+        proporcional de casos respiratoris. Encara que sembla lògic no és exactament així perquè un augment de 5 &micro;g/m<sup>3</sup>
+        de NO<sub>2</sub> no es el mateix si augmenta de 5 a 10 com si augmenta de 40 a 45, es a dir, és una corba i no una és una recta.
+        Els retards s'anomenen LAG i poden ser igual a 0 (no hi ha retard) o igual a qualsevol número entre 0 i 14. Si LAG es igual a 14
+        vol dir que passen 2 setmanes entre el pic del contaminant i el pic de problemes de salut.</p>
+<p> Gasparrini, A. ; Armstrong, B. ; Kenward, M.G. (2010). Distributed lag non-linear models. Stat. Med. 29 (21):2224-34. doi: <a href="https://doi.org/10.1002/sim.3940">https://doi.org/10.1002/sim.3940</a></p>
+</div>
     <!-- Nota final MathJax -->
     <div style="text-align: right; opacity: 0.7; font-size: 0.8rem;">Equacions renderitzades amb MathJax · Problema epidemiològic ambiental</div>
 </div>
 
-<h1>Model DLNM (Model No Linial de Retard Distribuït)</h1>
-<P>Aquest model va ser creat per Gasparrini <i>et al.</i> (2010) </P>
-    <p> Els contaminants tenen un temps de retard respecte a la salut, es a dir, no hi ha un efecte immediat.
-        Moltes vegades poden tenir un efecte més tard.</p>
-    <p>Aquests models no son linials perque si fos linial significaria que un augment de contaminació provoca 
-        un augment proporcional de casos respiratoris. Encara que sembla lògic no és exactament així perquè un augment
-        de 5 &micro;g/m<sup>3</sup> de NO<sub>2</sub> no és el mateix si augmenta de 5 a 10 que si augmenta de 40 a 45, 
-        és a dir, és una corba i no és una recta.. Els retards s'anomenen "lags" i poden ser igual a 0 (no hi ha retard) 0 igual a cualsevol número
-        entre 0 i 14, si lag és igual a 14 significa que passen dues semanes entre el pic de contaminant i el pic de problema de salut</p>
-    <P>Gasparrini, A; Armstrong, B; Kenward, M. G. (2010) Distributed lag non-linear models
-    Stat. Med. 29 (21):2224-34. DOI: <a href="https://doi.org/10.1002/sim.3940">https://doi.org/10.1002/sim.3940</a>
-
-</P>
-    
 <script>
     window.addEventListener('load', function() {
         if (window.MathJax) {
             MathJax.typesetPromise();
         }
     });
-
-
-<div id="navbar"></div>
-
-<script>
-fetch("/navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
 </script>
 
-
-</script>
-
-<script>
-function toggleDropdown(id) {
-  const el = document.getElementById(id);
-
-  document.querySelectorAll('[id^="dd"]').forEach(d => {
-    if (d.id !== id) d.classList.add('hidden');
-  });
-
-  el.classList.toggle('hidden');
-}
-
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".relative")) {
-    document.querySelectorAll('[id^="dd"]').forEach(d => d.classList.add('hidden'));
-  }
-});
-
-setTimeout(() => {
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
-}, 100);
-</script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
 </body>
 </html>

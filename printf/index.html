@@ -138,10 +138,52 @@
     -->
 
     <textarea id="code">#include <stdio.h>
+#include <windows.h>
 
-int main(void) {
-    printf("Hola, món!\n");
-    printf("El programa C s'ha executat correctament!\n");
+int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    // Variables inicials 
+    double m = 1800.0;      // Massa en kg
+    double h = 20.0;       // Altura en m
+    double t_min = 1.0;    // Temps en minuts
+    double Fr = 1500.0;    // Força de fregament en Newtons
+    double g = 9.81;       // Gravetat en m/s^2
+    double W_a_CV = 736.0; // Factor de conversió W a CV
+
+    double t_s, Wa, Pa_W, Pa_CV, Wb, Pb_W, Pb_CV;
+
+    printf("\n");
+    printf("Exercici a5)\n\n");
+    printf("Un muntacàrregues puja una càrrega de 1800 kg a 20 m d'altura en 1 minut.\n");
+    printf("Calcula el treball i la potència del motor en CV en funció de les opcions a) i b)\n");
+    printf("a) Fregament és nul F=0.\n");
+    printf("b) Fregament de 1500N\n");
+
+    // Càlculs previs
+    t_s = t_min * 60.0; // Conversio de minuts a segons
+
+    /* a) Fregament és nul */
+    Wa = m * g * h;
+    Pa_W = Wa / t_s;
+    Pa_CV = Pa_W / W_a_CV;
+
+    /* b) Amb força de fregament */
+    Wb = ((m * g) + Fr) * h;
+    Pb_W = Wb / t_s;
+    Pb_CV = Pb_W / W_a_CV;
+
+    // Resultats
+    printf("RESULTATS\n");
+    printf("a) Fregament és nul:\n");
+    printf("Treball (R) = %.3f J\n", Wa);
+    printf("Potència = %.3f cv\n\n", Pa_CV);
+
+    printf("b) Amb força de fregament = %.0f N:\n", Fr);
+    printf("Treball (R) = %.3f J\n", Wb);
+    printf("Potència = %.3f cv\n\n", Pb_CV);
+   
     return 0;
 }</textarea>
 

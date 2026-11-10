@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web de Achraf</title>
+  
+  <!-- Bootstrap 5 y FontAwesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  
   <style>
-    /* 1. Submenús en mode fosc */
+    /* Estilos del menú desplegable en modo oscuro */
     body[data-bs-theme="dark"] .dropdown-menu {
       background-color: #2c2c2c !important;
       border-color: #444;
@@ -21,15 +24,16 @@
       color: #ffffff !important;
     }
 
-    /* 2. Botó mode fosc/clar només icona */
+    /* Botón de tema claro/oscuro */
     #themeToggle {
       border: none;
       background: transparent;
       font-size: 1.3rem;
       color: inherit;
+      padding: 0 10px;
     }
 
-    /* 3. Hamburguesa blanca en mode fosc */
+    /* Botón hamburguesa para móvil */
     .navbar-toggler {
       border: none;
     }
@@ -40,71 +44,66 @@
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.9%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-    /* 4. Logo circular i adaptatiu */
+    /* Logo de la web */
     .logo {
       width: 40px;
       height: 40px;
       object-fit: cover;
     }
-    @media (max-width: 576px) {
-      .logo {
-        width: 30px;
-        height: 30px;
-      }
-    }
     @media (min-width: 992px) {
-      .logo {
-        width: 50px;
-        height: 50px;
-      }
+      .logo { width: 50px; height: 50px; }
     }
+
+    /* Colores del Navbar */
     #mainNavbar {
-      background-color: #ffffff; /* fondo sólido */
-      z-index: 1030;             /* más alto que el contenido */
-      border-radius: 0;        
+      background-color: #ffffff;
+      z-index: 1030;
       transition: background-color 0.3s ease;
     }
     body[data-bs-theme="dark"] #mainNavbar {
-      background-color: #212529; /* fondo sólido en modo oscuro */
+      background-color: #212529;
     }
   </style>
 </head>
 <body data-bs-theme="light">
-  <!-- Navbar -->
+
+  <!-- ==================== NAVBAR ÚNICO ==================== -->
   <nav class="navbar navbar-expand-lg navbar-light shadow sticky-top" id="mainNavbar">
     <div class="container-fluid">
-      <!-- 5. Logo i text -->
+      
+      <!-- LOGO Y TÍTULO A LA IZQUIERDA -->
       <a class="navbar-brand d-flex align-items-center" href="https://aziani01.github.io">
         <img src="https://aziani01.github.io/logo.png" alt="Logo" class="logo rounded-circle me-2">
         <span class="fw-bold">Web de Achraf</span>
       </a>
 
-      <!-- Botó menú mòbil -->
+      <!-- BOTÓN MÓVIL -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Menú -->
+      <!-- MENÚS (ALINEADOS A LA DERECHA CON ms-auto) -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- "ms-auto" empuja los elementos hacia la derecha para que no se amontonen con el logo -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
           
           <!-- Projecte 1 -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="proj1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-diagram-project me-1"></i> Projecte de recerca
+              <i class="fa-solid fa-diagram-project me-1"></i> P1: Recerca
             </a>
-            <ul class="dropdown-menu" aria-labelledby="proj1Dropdown">
-              <li><a class="dropdown-item" href="https://aziani01.github.io/cerca/"><i class="fa-solid fa-seedling"></i> Comparem porros</a></li>
-              <li><a class="dropdown-item" href="https://aziani01.github.io/contaminació/"><i class="fa-solid fa-head-side-mask"></i> Contaminació El Prat</a></li>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="proj1Dropdown">
+              <li><a class="dropdown-item" href="https://aziani01.github.io/cerca/"><i class="fa-solid fa-seedling me-1"></i> Comparem porros</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/contaminació/"><i class="fa-solid fa-head-side-mask me-1"></i> Contaminació El Prat</a></li>
             </ul>
           </li>
           
           <!-- Projecte 2 -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="proj2Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-folder-open me-1"></i> 22 dies en 22 peus
+              <i class="fa-solid fa-folder-open me-1"></i> P2: 22 dies
             </a>
-            <ul class="dropdown-menu" aria-labelledby="proj2Dropdown">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="proj2Dropdown">
               <li><a class="dropdown-item" href="https://aziani01.github.io/vectors"><i class="fa-solid fa-chart-line me-1"></i> Vectors</a></li>
               <li><a class="dropdown-item" href="https://aziani01.github.io/distàncies/"><i class="fa-solid fa-cogs me-1"></i> Distàncies</a></li>
             </ul>
@@ -113,60 +112,77 @@
           <!-- Projecte 3 -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="proj3Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-folder-open me-1"></i> Projecte contaminació i salut
+              <i class="fa-solid fa-folder-open me-1"></i> P3: Salut
             </a>
-            <ul class="dropdown-menu" aria-labelledby="proj3Dropdown">
-              <li><a class="dropdown-item" href="https://aziani01.github.io/epi"><i class="fa-solid fa-head-side-mask"></i> Environmental Epidemiological Analysis</a></li>
-              <li><a class="dropdown-item" href="https://aziani01.github.io/dlnm/"><i class="fa-solid fa-biohazard"></i> Distributed Lag Non-linear Models</a></li>
-              <li><a class="dropdown-item" href="https://aziani01.github.io/epidemiologia"><i class="fa-solid fa-file-medical"></i> Resultats del Prat</a></li>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="proj3Dropdown">
+              <li><a class="dropdown-item" href="https://aziani01.github.io/epi"><i class="fa-solid fa-head-side-mask me-1"></i> Environmental Epidemiological Analysis</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/dlnm/"><i class="fa-solid fa-biohazard me-1"></i> Distributed Lag Non-linear Models</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/epidemiologia"><i class="fa-solid fa-file-medical me-1"></i> Resultats del Prat</a></li>
             </ul>
           </li>
           
-          <!-- Projecte 4 -->
+          <!-- Python i JS -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="proj4Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-folder-open me-1"></i> Projecte programació
+              <i class="fa-solid fa-code me-1"></i> Python / JS
             </a>
-            <ul class="dropdown-menu" aria-labelledby="proj4Dropdown">
-              <li><a class="dropdown-item" href="https://aziani01.github.io/programacioc"><i class="fa-solid fa-code"></i> Programació C</a></li>
-              <li><a class="dropdown-item" href="https://aziani01.github.io/phyton"><i class="fa-brands fa-python"></i> Programació Python</a></li>
-              <li><a class="dropdown-item" href="https://aziani01.github.io/javascript"><i class="fa-brands fa-js"></i> Programació JavaScript</a></li>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="proj4Dropdown">
+              <li><a class="dropdown-item" href="https://aziani01.github.io/phyton"><i class="fa-brands fa-python me-1"></i> Programació Python</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/javascript"><i class="fa-brands fa-js me-1"></i> Programació JavaScript</a></li>
             </ul>
           </li>
-          
+
+          <!-- Programació C (DESTACADO) -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="cDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-laptop-code me-1 text-primary"></i> Programació C
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cDropdown">
+              <li><a class="dropdown-item" href="https://aziani01.github.io/programacioc"><i class="fa-solid fa-book me-1"></i> Inici Programació C</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/programacioc/printf.html"><i class="fa-solid fa-terminal me-1"></i> Exercici amb printf</a></li>
+            </ul>
+          </li>
+
+          <!-- BOTÓN CLARO/OSCURO A LA DERECHA DEL TODO -->
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <button id="themeToggle" aria-label="Canviar mode fosc/clar"><i class="fa-solid fa-moon"></i></button>
+          </li>
+
         </ul>
-        
-        <!-- Botó mode clar/fosc -->
-        <button id="themeToggle" class="ms-2" aria-label="Canviar mode fosc/clar"><i class="fa-solid fa-moon"></i></button>
       </div>
     </div>
   </nav>
+  <!-- ==================== FIN NAVBAR ==================== -->
 
-  <!-- Contingut -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="container py-5">
     <h1 class="display-5 fw-bold mb-4">Benvinguts als Projectes</h1>
     <p class="lead">Aquesta és una web amb menú desplegable, icones Font Awesome, mode clar i fosc, i disseny responsiu per mòbil i ordinador utilitzant Bootstrap 5.3.8. Aquest és el punt de partida per editar tot i fer projectes amb el professor Francesc Pérez.</p>
     
-    <p class="lead">Sóc <u>Achraf</u> de <b>1er BATX</b> de l'<a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/" target="_blank">Institut Pompeu Fabra</a>.</p>
+    <p class="lead">Sóc <u>Achraf</u> de <b>4tA ESO</b> de l'<a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/" target="_blank">Institut Pompeu Fabra</a>.</p>
     
-    <p class="lead">En aquesta web veurem projectes realitzats durant 4t d'ESO i 1er BATX a la matèria de Programació:</p>
+    <p class="lead">En aquesta web veurem projectes realitzats durant 4t d'ESO a la matèria de digitalització:</p>
     
     <ul class="list-group list-group-flush mb-4">
       <li class="list-group-item bg-transparent">
-        <strong>Projecte 1:</strong> Comparar aliments ecològics i convencionals pel que fa el nivell de nutrients: vitamines, minerals, polifenols i altres substàncies beneficioses.
+        <strong>P1 Recerca:</strong> Comparar aliments ecològics i convencionals pel que fa el nivell de nutrients: vitamines, minerals, polifenols i altres substàncies beneficioses.
       </li>
       <li class="list-group-item bg-transparent">
-        <strong>Projecte 2:</strong> 22 dies en 22 peus. És una cursa nàutica on aprenem a sumar vectors, calcular distàncies GPS i altres activitats.
+        <strong>P2 22 dies en 22 peus:</strong> És una cursa nàutica on aprenem a sumar vectors, calcular distàncies GPS i altres activitats.
       </li>
       <li class="list-group-item bg-transparent">
-        <strong>Projecte 3:</strong> En aquest projecte analitzarem la contaminació i les malalties respiratòries. Podrem veure com amb més contaminació, més són els casos d'infeccions respiratòries.
+        <strong>P3 Contaminació i Salut:</strong> En aquest projecte analitzarem la contaminació i les malalties respiratòries. Podrem veure com amb més contaminació, més són els casos d'infeccions respiratòries.
+      </li>
+      <li class="list-group-item bg-transparent">
+        <strong>Programació:</strong> Projectes i simuladors interactius en C, Python i JavaScript.
       </li>
     </ul>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Mode clar/fosc amb canvi d'icona i de classe de navbar
+    // Script Modo Oscuro/Claro
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
     const navbar = document.getElementById('mainNavbar');

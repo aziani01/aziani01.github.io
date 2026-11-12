@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ca">
 <head>
   <meta charset="UTF-8" />
@@ -15,8 +15,8 @@
       --surface-2: #f8fafc;
       --text: #0f172a;
       --muted: #64748b;
-      --primary: #7dd3fc;
-      --primary-700: #0284c7;
+      --primary: #0284c7;
+      --primary-700: #0369a1;
       --border: #e2e8f0;
       --danger: #dc2626;
       --success: #16a34a;
@@ -30,6 +30,17 @@
       background: var(--bg);
       font-family: 'Inter', sans-serif;
       color: var(--text);
+    }
+
+    /* ESTILOS NAVBAR */
+    .logo { width: 40px; height: 40px; object-fit: cover; }
+    @media (min-width: 992px) { .logo { width: 50px; height: 50px; } }
+    #mainNavbar {
+      background-color: #ffffff;
+      z-index: 1030;
+      border-radius: 16px;
+      margin: 10px;
+      padding: 8px 16px;
     }
 
     .hero {
@@ -180,54 +191,75 @@
     }
   </style>
 </head>
-  <nav id="mainNavbar" class="navbar navbar-expand-lg shadow" style="border-radius:16px; margin:10px; padding:8px 16px;">
-  <div class="container-fluid">
-    <!-- Logo y texto -->
-    <a class="navbar-brand d-flex align-items-center" href="https://aziani01.github.io">
-      <img src="https://izeddi.github.io/logo.png" alt="Logo" class="logo rounded-circle me-2">
-      <span class="fw-bold">Web de Achraf</span>
-    </a>
+<body>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white shadow sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="https://aziani01.github.io">
+        <img src="https://aziani01.github.io/logo.png" alt="Logo" class="logo rounded-circle me-2">
+        <span class="fw-bold">Web de Achraf</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="proj1Dropdown" role="button" data-bs-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="proj1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-diagram-project me-1"></i> Cerca IA vs Google Academic
             </a>
-            <ul class="dropdown-menu" aria-labelledby="proj1Dropdown">
-              <li><a class="dropdown-item" href="https://aziani01.github.io/cerca"><i class="fa-solid fa-seedling me-1"></i>Recerca Porro</a></li>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="proj1Dropdown">
+              <li><a class="dropdown-item" href="https://aziani01.github.io/cerca"><i class="fa-solid fa-seedling me-1"></i> Recerca Porro</a></li>
             </ul>
           </li>
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="proj2Dropdown" role="button" data-bs-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="proj2Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-folder-open me-1"></i> 22 dies en 22 peus
             </a>
-            <ul class="dropdown-menu" aria-labelledby="proj2Dropdown">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="proj2Dropdown">
               <li><a class="dropdown-item" href="https://aziani01.github.io/introducció"><i class="fa-solid fa-file-lines me-1"></i> Introducció al Projecte</a></li>
               <li><a class="dropdown-item" href="https://aziani01.github.io/vectors"><i class="fa-solid fa-compass me-1"></i> Calculem rumbs amb vectors</a></li>
               <li><a class="dropdown-item" href="https://aziani01.github.io/distàncies"><i class="fa-solid fa-arrows-left-right-to-line me-1"></i> Calculem distancies amb GPS</a></li>
             </ul>
           </li>
-         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="proj3Dropdown" role="button" data-bs-toggle="dropdown">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="proj3Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-folder-open me-1"></i> Contaminació i Salut al Baix Llobregat
             </a>
-            <ul class="dropdown-menu" aria-labelledby="proj3Dropdown">
-              <li><a class="dropdown-item" href="https://aziani01.github.io/contaminació"><i class="fa-solid fa-head-side-mask me-1"></i>Contaminació i Salut Respiratòria a El Prat (Sagnier)</a></li>
-              <li><a class="dropdown-item" href="https://aziani01.github.io/epi"><i class="fa-solid fa-head-side-mask me-1"></i>Environmental Epidemiological Analysis</a></li>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="proj3Dropdown">
+              <li><a class="dropdown-item" href="https://aziani01.github.io/contaminació"><i class="fa-solid fa-head-side-mask me-1"></i> Contaminació i Salut Respiratòria a El Prat (Sagnier)</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/epi"><i class="fa-solid fa-head-side-mask me-1"></i> Environmental Epidemiological Analysis</a></li>
               <li><a class="dropdown-item" href="https://aziani01.github.io/dlnm"><i class="fa-solid fa-smog me-1"></i> Distributed Lag Non-linear Models</a></li>
               <li><a class="dropdown-item" href="https://aziani01.github.io/epidemiologia"><i class="fa-solid fa-industry me-1"></i> Resultats de El Prat (Sagnier)</a></li>
+            </ul>
+          </li>
+
+          <!-- Programació C -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="cDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-laptop-code me-1 text-primary"></i> Programació C
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cDropdown">
+              <li><a class="dropdown-item" href="https://aziani01.github.io/programacioc"><i class="fa-solid fa-book me-1"></i> Inici Programació C</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/printf"><i class="fa-solid fa-terminal me-1"></i> Exercici amb printf</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/scanf"><i class="fa-solid fa-terminal me-1"></i> Exercici amb scanf</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/buclew"><i class="fa-solid fa-terminal me-1"></i> Exercici amb bucle while</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/function"><i class="fa-solid fa-terminal me-1"></i> Exercici amb funcions</a></li>
+              <li><a class="dropdown-item" href="https://aziani01.github.io/pau"><i class="fa-solid fa-terminal me-1"></i> Exercici de PAU amb funcions</a></li>
             </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  
-  <body>
+  <!-- ==================== FIN NAVBAR ==================== -->
+
   <header class="hero text-center">
     <div class="container">
       <h1 class="display-5 fw-bold mb-3"><i class="fa-solid fa-chart-line text-info me-2"></i>DLNM Explorer</h1>
@@ -244,39 +276,39 @@
       Has obert el fitxer amb <span class="code-inline">file://</span>. WebR necessita un servidor local (per exemple, Live Server).
     </div>
 
-<section class="card">
-  <div class="card-header"><i class="fa-solid fa-file-csv text-primary me-2"></i>1. Upload Dataset (.csv)</div>
-  <div class="card-body">
-    <div class="row g-3 mb-3">
-      <div class="col-md-4">
-        <label class="form-label fw-semibold">Exemples (City1 / City2)</label>
-        <select id="demoDataset" class="form-select form-select-lg">
-          <option value="">-- Puja un arxiu propi --</option>
-                <option value="merged_df_elpratdagnier.csv">🏢 El Prat (Sagnier) </option>
-                <option value="merged_df_elpratjardinsdelapau.csv">🏙️ El Prat (Jardins De La Pau) </option>
-                <option value="merged_df_gava.csv">🏢 Gavà </option>
-                <option value="merged_df_hospitalet.csv">🏙️ L'Hospitalet de Llobregat </option>
-                <option value="merged_df_martorell.csv">🏢 Martorell </option>
-                <option value="merged_df_palleja.csv">🏙️ Pallejà </option>
-                <option value="merged_df_santandreu.csv">🏢 Sant Andreu De La Barca </option>
-                <option value="merged_df_santviçentdelshorts.csv">🏙️ Sant Viçents Dels Horts </option>
-                <option value="merged_df_viladecans.csv">🏢 Viladecans </option>
-        </select>
-      </div>
-      <div class="col-md-5">
-        <label class="form-label fw-semibold">O puja el teu fitxer CSV</label>
-        <input type="file" id="csvFile" class="form-control form-control-lg" accept=".csv,text/csv" />
-      </div>
-      <div class="col-md-3 d-flex align-items-end">
-        <div id="fileStatus" class="w-100 d-flex align-items-center fw-semibold bg-primary bg-opacity-10 text-primary rounded-3 p-2">
-          <span class="spinner-border spinner-border-sm me-2"></span>
-          Initializing WebR...
+    <section class="card">
+      <div class="card-header"><i class="fa-solid fa-file-csv text-primary me-2"></i>1. Upload Dataset (.csv)</div>
+      <div class="card-body">
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Exemples (City1 / City2)</label>
+            <select id="demoDataset" class="form-select form-select-lg">
+              <option value="">-- Puja un arxiu propi --</option>
+              <option value="merged_df_elpratdagnier.csv">🏢 El Prat (Sagnier)</option>
+              <option value="merged_df_elpratjardinsdelapau.csv">🏙️ El Prat (Jardins De La Pau)</option>
+              <option value="merged_df_gava.csv">🏢 Gavà</option>
+              <option value="merged_df_hospitalet.csv">🏙️ L'Hospitalet de Llobregat</option>
+              <option value="merged_df_martorell.csv">🏢 Martorell</option>
+              <option value="merged_df_palleja.csv">🏙️ Pallejà</option>
+              <option value="merged_df_santandreu.csv">🏢 Sant Andreu De La Barca</option>
+              <option value="merged_df_santviçentdelshorts.csv">🏙️ Sant Viçents Dels Horts</option>
+              <option value="merged_df_viladecans.csv">🏢 Viladecans</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <label class="form-label fw-semibold">O puja el teu fitxer CSV</label>
+            <input type="file" id="csvFile" class="form-control form-control-lg" accept=".csv,text/csv" />
+          </div>
+          <div class="col-md-3 d-flex align-items-end">
+            <div id="fileStatus" class="w-100 d-flex align-items-center fw-semibold bg-primary bg-opacity-10 text-primary rounded-3 p-2">
+              <span class="spinner-border spinner-border-sm me-2"></span>
+              Initializing WebR...
+            </div>
+          </div>
         </div>
+        <div id="colInfo" class="mt-3 small-note"></div>
       </div>
-    </div>
-    <div id="colInfo" class="mt-3 small-note"></div>
-  </div>
-</section>
+    </section>
 
     <section class="card">
       <div class="card-header"><i class="fa-solid fa-sliders me-2"></i>2. Model Specification</div>
@@ -459,10 +491,8 @@
 
     import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs';
 
-
-   
     const els = {
-      demoDataset: document.getElementById('demoDataset'), // <-- Nova línia
+      demoDataset: document.getElementById('demoDataset'),
       fileInput: document.getElementById('csvFile'),
       outcome: document.getElementById('outcomeVar'),
       exposure: document.getElementById('exposureVar'),
@@ -514,7 +544,7 @@
     }
 
     function setStatus(kind, html) {
-      els.fileStatus.className = 'd-flex align-items-center fw-semibold rounded-3 p-2';
+      els.fileStatus.className = 'w-100 d-flex align-items-center fw-semibold rounded-3 p-2';
       const base = kind === 'success'
         ? 'bg-success bg-opacity-10 text-success'
         : kind === 'danger'
@@ -623,7 +653,6 @@
           if (all(is.na(y))) stop('Outcome is completely empty (all NA).')
           if (all(is.na(x))) stop('Exposure is completely empty (all NA).')
 
-          # Keep only relevant variables and remove bad confounders.
           conf_list <- ${confVec}
           good_conf <- character(0)
           if (length(conf_list) > 0) {
@@ -640,11 +669,9 @@
           removed_conf <- length(conf_list) - length(good_conf)
           if (removed_conf > 0) removed_list <- paste(setdiff(conf_list, good_conf), collapse = ', ')
 
-          # Build analysis dataset.
           keep_vars <- unique(c(${JSON.stringify(outcome)}, ${JSON.stringify(exposure)}, good_conf, 'time'))
           df_model <- df_clean[, keep_vars, drop = FALSE]
 
-          # Drop rows with missing values in analysis variables only.
           complete_idx <- complete.cases(df_model)
           df_model <- df_model[complete_idx, , drop = FALSE]
           if (nrow(df_model) < 50) stop('Too few complete observations after cleaning.')
@@ -652,7 +679,6 @@
           y2 <- df_model[[${JSON.stringify(outcome)}]]
           x2 <- df_model[[${JSON.stringify(exposure)}]]
 
-          # Decide family from outcome.
           is_count <- all(y2 >= 0, na.rm = TRUE) && all(abs(y2 - round(y2)) < 1e-8, na.rm = TRUE)
           res_fam <- if (is_count) 'quasipoisson' else 'gaussian'
           fam_obj <- if (is_count) quasipoisson() else gaussian()
@@ -719,344 +745,188 @@
       `;
     }
 
- async function bufferToDf(buf) {
-  await webR.FS.writeFile('data.csv', new Uint8Array(buf));
-  await webR.evalR(`
-    df <- read.csv('data.csv', stringsAsFactors = FALSE, na.strings = c('NA','na','',' ','null','NULL'))
-    names(df) <- make.names(names(df), unique = TRUE)
-    for (nm in names(df)) {
-      if (nm == 'date') next
-      if (is.character(df[[nm]])) {
-        suppressWarnings({ num <- as.numeric(df[[nm]]) })
-        if (sum(!is.na(num)) > sum(!is.na(df[[nm]])) * 0.7) df[[nm]] <- num
+    async function bufferToDf(buf) {
+      await webR.FS.writeFile('data.csv', new Uint8Array(buf));
+      await webR.evalR(`
+        df <- read.csv('data.csv', stringsAsFactors = FALSE, na.strings = c('NA','na','',' ','null','NULL'))
+        names(df) <- make.names(names(df), unique = TRUE)
+        for (nm in names(df)) {
+          if (nm == 'date') next
+          if (is.character(df[[nm]])) {
+            suppressWarnings({ num <- as.numeric(df[[nm]]) })
+            if (sum(!is.na(num)) > sum(!is.na(df[[nm]])) * 0.7) df[[nm]] <- num
+          }
+        }
+        if ('date' %in% names(df)) {
+          df$date <- as.Date(df$date, tryFormats = c('%Y-%m-%d', '%d/%m/%Y', '%m/%d/%Y'))
+        }
+        df$time <- seq_len(nrow(df))
+      `);
+    }
+
+    function updateConfoundersList() {
+      const prevSelected = selectedConfounders();
+      const confCols = filterConfounders(lastData.cols, els.outcome.value, els.exposure.value);
+      fillSelect(els.confounders, confCols, prevSelected);
+    }
+
+    async function loadDataset(buf, sourceLabel) {
+      if (!ready) {
+        showError('WebR engine is still initializing. Please wait a few seconds and try again.');
+        return;
+      }
+      hideMessages();
+      setStatus('primary', '<span class="spinner-border spinner-border-sm me-2"></span>Loading dataset...');
+
+      try {
+        await bufferToDf(buf);
+        const colsRaw = await (await webR.evalR('names(df)')).toArray();
+        const rows = (await (await webR.evalR('nrow(df)')).toArray())[0];
+        const cols = colsRaw.filter(c => c !== 'time');
+
+        if (cols.length < 2) throw new Error('Dataset must contain at least 2 columns.');
+
+        lastData = { cols, rows };
+        const { outcome, exposure } = guessDefaults(cols);
+
+        els.outcome.classList.remove('bg-light');
+        els.exposure.classList.remove('bg-light');
+        els.outcome.disabled = false;
+        els.exposure.disabled = false;
+        els.confounders.disabled = false;
+
+        fillSelect(els.outcome, cols, [outcome]);
+        fillSelect(els.exposure, cols, [exposure]);
+        els.outcome.value = outcome;
+        els.exposure.value = exposure;
+
+        const confCols = filterConfounders(cols, outcome, exposure);
+        fillSelect(els.confounders, confCols, []);
+
+        els.colInfo.innerHTML = `<i class="fa-solid fa-table text-primary me-1"></i><strong>${sourceLabel}</strong>: ${rows} rows &times; ${cols.length} columns (${cols.join(', ')})`;
+        els.runBtn.disabled = false;
+        setStatus('success', `<i class="fa-solid fa-circle-check me-2"></i>Loaded (${rows} rows)`);
+      } catch (err) {
+        setStatus('danger', '<i class="fa-solid fa-circle-xmark me-2"></i>Load Error');
+        showError('Failed to parse CSV file: ' + err.message);
       }
     }
-    if ('date' %in% names(df)) {
-      df$date <- as.Date(df$date, tryFormats = c('%Y-%m-%d', '%d/%m/%Y', '%m/%d/%Y'))
-    }
-    df$time <- seq_len(nrow(df))
-  `);
-}
 
-
-  <body data-bs-theme="light">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light shadow sticky-top">
-    <div class="container-fluid">
-      <!-- 5. Logo i text -->
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="https://aziani01.github.io/logo.png" alt="Logo.png" class="logo rounded-circle me-2">
-        <span class="fw-bold">Web de Achraf</span>
-      </a>
-
-      <!-- Botó menú mòbil -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Menú -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- Projecte 1 -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="proj1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-diagram-project me-1"></i> Projecte de reçerca
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="proj1Dropdown">
-              <li><a class="dropdown-item" href="https://aziani01.github.io/cerca/"><i class="fa-solid fa-seedling"></i> Comparem porros</a></li>
-              <li><a class="dropdown-item" href="https://aziani01.github.io/contaminació/"><i class="fa-solid fa-head-side-mask"></i> Contaminacio El Prat</a></li>
-               <li><a class="dropdown-item" href="https://aziani01.github.io/epi/"><i class="fa-solid fa-seedling"></i> Anàlisis Epidelogic </a></li>
-            </ul>
-          </li>
-          <!-- Projecte 2 -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="proj2Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-folder-open me-1"></i> 22 dies en 22 peus
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="proj2Dropdown">
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-chart-line me-1"></i> Projecte 2.1</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cogs me-1"></i> Projecte 2.2</a></li>
-            </ul>
-          </li>
-        </ul>
-             <!--projecte 3 -->
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="proj2Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-folder-open me-1"></i> Projecte de contaminació i salut  Baix llobregat 
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="proj2Dropdown">
-              <li><a class="dropdown-item" href="https://aziani01.github.io/epi""><i class="fa-solid fa-head-side-mask"></i> Environmental Epidemiological Analysis</a></li>
-              <li><a class="dropdown-item" href="https://aziani01.github.io/dlnm/"><i class="fa-solid fa-biohazard"></i> Distributed Lag Non-linear Models</a></li>
-                <li><a class="dropdown-item" href="https://aziani01.github.io/epidemiologia"><i class="fa-solid fa-file-medical"></i>> Resultats del Prat </a></li>
-            </ul>
-          </li>
-        </ul>
-        
-        <!-- Botó mode clar/fosc -->
-        <button id="themeToggle" class="ms-2"><i class="fa-solid fa-moon"></i></button>
-      </div>
-    </div>
-  </nav>
-    
-async function processLoadedData() {
-  const cols = await getRValue('names(df)', 'array');
-  const rows = await getRValue('nrow(df)', 'number');
-  if (!rows) throw new Error('El CSV està buit o no s\'ha pogut llegir.');
-
-  lastData = { cols, rows };
-  const defaults = guessDefaults(cols);
-
-  fillSelect(els.outcome, cols);
-  fillSelect(els.exposure, cols);
-  els.outcome.value = defaults.outcome;
-  els.exposure.value = defaults.exposure;
-
-  updateConfoundersFromSelection();
-  enableForm();
-
-  els.colInfo.innerHTML = `✅ Dataset carregat: <strong>${rows} files</strong> i <strong>${cols.length} variables</strong>.`;
-  setStatus('success', '<i class="fa-solid fa-circle-check me-2"></i>Dades Processades');
-}
-
-
-
-
-    async function getRValue(expr, type = 'string') {
-      const obj = await webR.evalR(expr);
-      if (type === 'boolean') return await obj.toBoolean();
-      if (type === 'number') return await obj.toNumber();
-      if (type === 'array') return await obj.toArray();
-      return await obj.toString();
-    }
-
-    async function loadPlot(path, imgEl) {
-      const bytes = await webR.FS.readFile(path);
-      imgEl.src = `data:image/png;base64,${bytesToBase64(bytes)}`;
+    async function loadPlotToImg(filename, imgEl) {
+      const bytes = await webR.FS.readFile(filename);
+      const b64 = bytesToBase64(bytes);
+      imgEl.src = `data:image/png;base64,${b64}`;
       imgEl.style.display = 'block';
     }
 
-    function resetPlots() {
-      for (const el of [els.plot3dImg, els.lagPlotImg, els.plotColdImg, els.plotHeatImg]) {
-        el.removeAttribute('src');
-        el.style.display = 'none';
-      }
-      els.plot3dCaption.innerHTML = '<i class="fa-solid fa-cube fa-3x text-secondary d-block mb-3"></i>The 3D response surface will appear here.';
-      els.plotCaption.textContent = 'No plot generated yet.';
-      els.coldCaption.textContent = '';
-      els.heatCaption.textContent = '';
-    }
-
-    function enableForm() {
-      els.outcome.disabled = false;
-      els.exposure.disabled = false;
-      els.confounders.disabled = false;
-      els.runBtn.disabled = false;
-      els.outcome.classList.remove('bg-light');
-      els.exposure.classList.remove('bg-light');
-      els.confounders.classList.remove('bg-light');
-    }
-
-    function updateConfoundersFromSelection() {
-  const outcome = els.outcome.value;
-  const exposure = els.exposure.value;
-  const cols = lastData.cols;
-
-  const allowed = filterConfounders(cols, outcome, exposure);
-
-  // detectem noms possibles (robust)
-  const lowerMap = new Map(cols.map(c => [c.toLowerCase(), c]));
-
-  const defaultTemp =
-    lowerMap.get('temp_mean') ||
-    lowerMap.get('temperature') ||
-    lowerMap.get('temp');
-
-  const defaultRH =
-    lowerMap.get('rh') ||
-    lowerMap.get('humidity');
-
-  els.confounders.innerHTML = '';
-
-  for (const c of allowed) {
-    const isDefault = (c === defaultTemp || c === defaultRH);
-    const opt = new Option(c, c, false, isDefault);
-    els.confounders.add(opt);
-  }
-}
-
-    initWebR();
-
-els.fileInput.addEventListener('change', async (e) => {
-  hideMessages();
-  els.demoDataset.value = ""; // Reiniciem el dropdown d'exemples
-  const file = e.target.files?.[0];
-  if (!file || !ready) return;
-
-  try {
-    setStatus('info', '<span class="spinner-border spinner-border-sm me-2"></span>Llegint dades...');
-    const buf = await file.arrayBuffer();
-    await bufferToDf(buf);
-    await processLoadedData();
-  } catch (err) {
-    setStatus('danger', '<i class="fa-solid fa-circle-xmark me-2"></i>Error de lectura');
-    showError('Error llegint CSV: ' + err.message);
-  }
-});
-els.demoDataset.addEventListener('change', async (e) => {
-  const filename = e.target.value;
-  if (!filename) return; // Ha tornat a posar "Puja el teu arxiu"
-
-  hideMessages();
-  els.fileInput.value = ""; // Netejem l'input file
-  if (!ready) return;
-
-  try {
-    setStatus('info', '<span class="spinner-border spinner-border-sm me-2"></span>Descarregant dataset...');
-    
-    // Obtenim l'arxiu via xarxa
-    const response = await fetch(filename);
-    if (!response.ok) throw new Error(`No s'ha pogut trobar l'arxiu ${filename} al servidor.`);
-    const buf = await response.arrayBuffer();
-
-    setStatus('info', '<span class="spinner-border spinner-border-sm me-2"></span>Processant dades...');
-    await bufferToDf(buf);
-    await processLoadedData();
-
-  } catch (err) {
-    setStatus('danger', '<i class="fa-solid fa-circle-xmark me-2"></i>Error de descàrrega');
-    showError('Error carregant dataset d\'exemple: ' + err.message);
-  }
-});
-
-    els.outcome.addEventListener('change', () => updateConfoundersFromSelection());
-    els.exposure.addEventListener('change', () => updateConfoundersFromSelection());
-
-    els.runBtn.addEventListener('click', async () => {
-      hideMessages();
-      resetPlots();
-
+    async function runDLNM() {
+      if (!ready) return;
       const outcome = els.outcome.value;
       const exposure = els.exposure.value;
-      const maxLag = Number(els.maxLag.value);
-      const confounders = selectedConfounders().filter(v => v !== outcome && v !== exposure);
-      const includeTime = els.includeTime.checked;
-      const antiOverfit = els.antiOverfit.checked;
 
       if (!outcome || !exposure) {
-        showError('Please select both Outcome and Exposure variables.');
+        showError('Please select both Outcome (Y) and Exposure (X) variables.');
         return;
       }
       if (outcome === exposure) {
-        showError('Outcome and Exposure cannot be the same variable.');
+        showError('Outcome (Y) and Exposure (X) must be different variables.');
         return;
       }
 
-      els.loadingMsg.classList.remove('d-none');
+      hideMessages();
       els.runBtn.disabled = true;
-      els.runBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Running...';
-      els.resultsSection.style.opacity = '0.65';
-      els.modelSummary.textContent = 'Processing model...';
+      els.loadingMsg.classList.remove('d-none');
 
       try {
-        const code = buildRCode({ outcome, exposure, maxLag, confounders, includeTime, antiOverfit });
-        await webR.evalR(code);
+        const rCode = buildRCode({
+          outcome,
+          exposure,
+          maxLag: parseInt(els.maxLag.value, 10),
+          confounders: selectedConfounders(),
+          includeTime: els.includeTime.checked,
+          antiOverfit: els.antiOverfit.checked
+        });
 
-        const success = await getRValue('res_success', 'boolean');
+        await webR.evalR(rCode);
+
+        const success = (await (await webR.evalR('res_success')).toArray())[0];
         if (!success) {
-          const msg = await getRValue('res_error', 'string');
-          throw new Error(msg || 'Unknown model error');
+          const errMsg = (await (await webR.evalR('res_error')).toArray())[0];
+          throw new Error(errMsg || 'Error fitting DLNM model.');
         }
 
-        const validRows = await getRValue('res_nobs', 'number');
-        const totalRows = await getRValue('res_total', 'number');
-        const totalCols = await getRValue('res_ncol', 'number');
-        const dfTime = await getRValue('res_df_time', 'number');
-        const retries = await getRValue('res_retries', 'number');
-        const famTxt = await getRValue('res_fam', 'string');
-        const vCold = await getRValue('val_cold', 'number');
-        const vHeat = await getRValue('val_heat', 'number');
-        const nCold = await getRValue('n_obs_cold', 'number');
-        const nHeat = await getRValue('n_obs_heat', 'number');
-        const maxRR = await getRValue('max_rr', 'number');
-        const removed = await getRValue('removed_conf', 'number');
-        const removedNames = await getRValue('removed_list', 'string');
-        const summary = await getRValue('res_summary', 'string');
+        const summary = (await (await webR.evalR('res_summary')).toArray())[0];
+        const fam = (await (await webR.evalR('res_fam')).toArray())[0];
+        const nobs = (await (await webR.evalR('res_nobs')).toArray())[0];
+        const total = (await (await webR.evalR('res_total')).toArray())[0];
+        const dfTime = (await (await webR.evalR('res_df_time')).toArray())[0];
+        const removedConf = (await (await webR.evalR('removed_conf')).toArray())[0];
+        const removedList = (await (await webR.evalR('removed_list')).toArray())[0];
+        const valCold = (await (await webR.evalR('val_cold')).toArray())[0];
+        const valHeat = (await (await webR.evalR('val_heat')).toArray())[0];
+        const nObsCold = (await (await webR.evalR('n_obs_cold')).toArray())[0];
+        const nObsHeat = (await (await webR.evalR('n_obs_heat')).toArray())[0];
+        const maxRr = (await (await webR.evalR('max_rr')).toArray())[0];
 
-        if (removed > 0) {
-          els.warningText.innerHTML = `Automatically removed <b>${removed}</b> confounder(s): <code>${removedNames}</code>`;
+        await loadPlotToImg('plot_3d.png', els.plot3dImg);
+        await loadPlotToImg('plot_overall.png', els.lagPlotImg);
+        await loadPlotToImg('plot_cold.png', els.plotColdImg);
+        await loadPlotToImg('plot_heat.png', els.plotHeatImg);
+
+        els.plot3dCaption.textContent = `3D exposure-lag-response surface for ${exposure} vs ${outcome}.`;
+        els.plotCaption.textContent = `Cumulative Relative Risk across lag 0–${els.maxLag.value} days (centered at median).`;
+        els.coldCaption.textContent = `1st percentile (${Number(valCold).toFixed(2)}) · ${nObsCold} days ≤ threshold.`;
+        els.heatCaption.textContent = `99th percentile (${Number(valHeat).toFixed(2)}) · ${nObsHeat} days ≥ threshold.`;
+
+        els.modelSummary.textContent = summary;
+        els.dataInfoText.innerHTML = `
+          Family: <strong>${fam}</strong> &bull;
+          Observations used: <strong>${nobs}</strong> / ${total} &bull;
+          Temporal spline df: <strong>${dfTime}</strong> &bull;
+          Peak RR: <strong>${Number.isFinite(maxRr) ? Number(maxRr).toFixed(3) : '—'}</strong>
+        `;
+        els.dataInfoBox.style.display = 'block';
+
+        if (removedConf > 0 && els.autoClean.checked) {
+          els.warningText.textContent = `Removed ${removedConf} invalid/constant confounder(s): ${removedList}`;
           els.warningBox.style.display = 'block';
         }
 
-        els.dataInfoText.innerHTML = `
-          <ul class="mb-0 lh-lg">
-            <li><strong>Dataset used:</strong> <b>${validRows}</b> complete observations from <b>${totalRows}</b> total rows.</li>
-            <li><strong>Variables:</strong> <b>${totalCols}</b> columns available.</li>
-            <li><strong>Family:</strong> <b>${famTxt.toUpperCase()}</b>.</li>
-            <li><strong>Configuration:</strong> ${includeTime ? `<b>Temporal control:</b> ${dfTime} df${retries > 0 ? ` <span class="badge bg-warning text-dark ms-2">Auto-reduced ${retries} times</span>` : ''}` : '<span class="badge bg-secondary">No temporal control</span>'} | <b>Lag df:</b> ${antiOverfit ? 2 : 3} | <b>Max lag:</b> ${maxLag} days.</li>
-          </ul>`;
-        els.dataInfoBox.style.display = 'block';
-
-        await loadPlot('plot_3d.png', els.plot3dImg);
-        await loadPlot('plot_overall.png', els.lagPlotImg);
-        await loadPlot('plot_cold.png', els.plotColdImg);
-        await loadPlot('plot_heat.png', els.plotHeatImg);
-
-        els.plot3dCaption.innerHTML = `3D response surface for <b>${exposure}</b> over <b>${maxLag}</b> lag days.`;
-        els.plotCaption.innerHTML = `Overall cumulative effect of <b>${exposure}</b> on <b>${outcome}</b>.`;
-        els.coldCaption.innerHTML = `Extreme cold slice: <b>${Number.isFinite(vCold) ? vCold.toFixed(2) : 'NA'}</b> | observations: <b>${nCold}</b>.`;
-        els.heatCaption.innerHTML = `Extreme heat slice: <b>${Number.isFinite(vHeat) ? vHeat.toFixed(2) : 'NA'}</b> | observations: <b>${nHeat}</b>.`;
-        els.modelSummary.textContent = `General Linear Model (${famTxt})\nTime degrees of freedom: ${dfTime}\nAnti-overfitting mode: df=${antiOverfit ? 2 : 3}\nMax RR (estimated): ${Number.isFinite(maxRR) ? maxRR.toFixed(2) : 'NA'}\n\n${summary}`;
-
         els.resultsSection.style.opacity = '1';
       } catch (err) {
-        showError(`<b>WebR Engine Error:</b><br><code>${err.message}</code>`);
+        showError(err.message);
       } finally {
         els.loadingMsg.classList.add('d-none');
         els.runBtn.disabled = false;
-        els.runBtn.innerHTML = '<i class="fa-solid fa-play-circle me-2"></i>Compute DLNM';
+      }
+    }
+
+    els.demoDataset.addEventListener('change', async (e) => {
+      const file = e.target.value;
+      if (!file) return;
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error(`HTTP ${res.status} – Could not fetch ${file}`);
+        const buf = await res.arrayBuffer();
+        await loadDataset(buf, file);
+      } catch (err) {
+        showError(`Could not load example dataset "${file}": ${err.message}`);
       }
     });
- 
-  <div id="navbar"></div>
 
-<script>
-fetch("/navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
-</script>
-  
-  </script>
-
-<script>
-function toggleDropdown(id) {
-  const el = document.getElementById(id);
-
-  document.querySelectorAll('[id^="dd"]').forEach(d => {
-    if (d.id !== id) d.classList.add('hidden');
-  });
-
-  el.classList.toggle('hidden');
-}
-
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".relative")) {
-    document.querySelectorAll('[id^="dd"]').forEach(d => d.classList.add('hidden'));
-  }
-});
-
-setTimeout(() => {
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+    els.fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      els.demoDataset.value = '';
+      const buf = await file.arrayBuffer();
+      await loadDataset(buf, file.name);
     });
-  }
-}, 100);
-</script>
 
+    els.outcome.addEventListener('change', updateConfoundersList);
+    els.exposure.addEventListener('change', updateConfoundersList);
+    els.runBtn.addEventListener('click', runDLNM);
+
+    initWebR();
+  </script>
 </body>
 </html>
